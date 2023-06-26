@@ -1,0 +1,56 @@
+{
+  "name": "generator-matrix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "generators"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "login": "npm login",
+    "publish": "npm publish --access=public",
+    "commit": "git add . && git-cz",
+    "eslint": "eslint --ext .js --ignore-path .gitignore --fix generators",
+    "prepare": "husky install",
+    "prettier": "prettier --write ./generators/*.{js,json,md}",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "release": "standard-version"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "axios": "^1.4.0",
+    "download-git-repo": "^3.0.2",
+    "figlet": "^1.6.0",
+    "yeoman-generator": "^1.1.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "commitizen": "^4.3.0",
+    "conventional-changelog-cli": "^3.0.0",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.43.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": ">=7",
+    "lint-staged": "^13.2.2",
+    "ora": "^4.0.0",
+    "prettier": "^2.8.8",
+    "standard-version": "^9.5.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    }
+  },
+  "commitizen": {
+    "path": "./node_modules/cz-customizable"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
